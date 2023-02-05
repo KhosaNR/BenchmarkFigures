@@ -128,9 +128,11 @@ namespace BenchmarkFigures.DomainServices
             return benchmarkPerformanceRepository.GetByInstrumentCodeBetwenDates(selectedBenchmarkCode, startDate, endDate);
         }
 
-        public static List<BenchmarkPerformance> CreateBenchmarkWithMixedCodes(IBenchmarkPerformanceRepository benchmarkPerformanceRepository, string initialBenchmarkCode, DateTime endDate, IPriceRepository priceRepository, SortedList<DateTime,Tuple<string,bool>> selectedBenchmarkCodes=null, bool useHistoricForInitial = false)
+        public static List<BenchmarkPerformance> CreateBenchmarkForOneOrMoreInstruments(IBenchmarkPerformanceRepository benchmarkPerformanceRepository, string initialBenchmarkCode, DateTime endDate, IPriceRepository priceRepository, SortedList<DateTime,Tuple<string,bool>> selectedBenchmarkCodes=null, bool useHistoricForInitial = false)
         {
-            //SortedList<DateTime,Tuple<string,bool>> selectedBenchmarkCodes
+            //Generates benchmarks for multiple scenarios
+            //
+            //SortedList<DateTime,Tuple<string,bool>> selectedBenchmarkCodes : SortedList<switchingStartDate,Tuple<BenchmarkCode,isHistoric>>
             //A list of sorted dates, specifying the start date for the benchmark code and if the benchmark uses historic data or not
             //
             //

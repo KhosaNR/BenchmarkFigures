@@ -103,7 +103,7 @@ namespace BenchmarkFigures.ConsoleApp // Note: actual namespace depends on the p
             }
 
             var combinedMixedBenchmark = BenchmarkPerformanceCalculator
-            .CreateBenchmarkWithMixedCodes(
+            .CreateBenchmarkForOneOrMoreInstruments(
             BenchmarkPerformanceRepository
             , initialBenchmarkCode
             , endDate
@@ -234,7 +234,7 @@ namespace BenchmarkFigures.ConsoleApp // Note: actual namespace depends on the p
                 Console.WriteLine("Please specify path to save report to and press Enter:\n");
                 csvSavePath = Console.ReadLine();
             }
-            var CsvWriter = new CsvHelper<Object>($@"{csvSavePath}\PortfolioReport_{DateTime.Now.ToString("yyyyMMddHHmmsst")}.csv", new string[] { "," });
+            var CsvWriter = new CsvHelper<Object>($@"{csvSavePath}\PortfolioReport_{DateTime.Now.ToString("yyyyMMddHHmmss")}.csv", new string[] { "," });
             var writingToCsvOutput = CsvWriter.WriteToCsv(portfolioCsvString);
             if (!string.IsNullOrEmpty(writingToCsvOutput))
             {

@@ -10,6 +10,7 @@ namespace BenchmarkFigures.DomainServices
 {
     public class PortfolioReport: Dictionary<string, double>
     {
+        //Key is numberOfMonths, Value is performance for that portfolio
         public string GenerateCsvString(string delimeter = ",")
         {
             var csv = new StringBuilder();
