@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BenchmarkFigures.DomainServices\BenchmarkFigures.DomainServices.csproj" />
+    <ProjectReference Include="..\BenchmarkFigures.Domain\BenchmarkFigures.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
